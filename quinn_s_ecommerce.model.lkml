@@ -2,7 +2,7 @@ connection: "thelook"
 
 # include all the views
 include: "*.view"
-include: "*.dashboard"
+# include: "*.dashboard"
 
 # datagroup: quinn_s_ecommerce_default_datagroup {
 #   # sql_trigger: SELECT MAX(id) FROM etl_log;;
@@ -17,6 +17,13 @@ explore: products {
  label: "Company"
   extension: required
 }
+
+# explore: order_items {
+#   join: order_ext {
+#     sql_on: ${order_ext.id} = ${order_items.order_id}
+#     AND {% condition date_filter %} ${order_ext.date_filter_dim} {% endcondition %};;
+#   }
+# }
 # explore: events {
 #   view_name: events
 #   join: users {
